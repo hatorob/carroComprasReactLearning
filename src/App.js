@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './App.css';
+import Productos from './components/Productos'
 
 class App extends Component {
 
@@ -7,16 +7,17 @@ class App extends Component {
     productos: [
       { name: 'Tomate', price: 1500, img: '/productos/tomate.jpg' },
       { name: 'Arbejas', price: 2500, img: '/productos/arbejas.jpg' },
-      { name: 'Lechuha', price: 500, img: '/productos/lechuga.jpg' },
+      { name: 'Lechuga', price: 500, img: '/productos/lechuga.jpg' },
     ]
   }
 
   render() {
     return (
       <div>
-        <p>
-          Hola Mundo!
-        </p>
+        <Productos 
+          agregarAlCarro={ () => console.log('Por el momento no hace nada....')}
+          productos={this.state.productos}
+        />
       </div>
     )
   }
