@@ -15,6 +15,7 @@ class App extends Component {
     carro: [
       //{ name: 'Tomate', price: 1500, img: '/productos/tomate.jpg', cantidad: 1 },
     ],
+    esCarroVisible: false,
   }
 
   agregarAlCarro = (producto) => {
@@ -35,12 +36,19 @@ class App extends Component {
     })
   }
 
-  render() {
+  mostrarCarro = () => {
+    if(!this.state.carro.length) {
+      return
+    }
+    this.setState({esCarroVisible: !this.state.esCarroVisible})
+  }
 
-    console.log(this.state.carro);
+  render() {
+    const {esCarroVisible} = this.state;
+    //console.log(this.state.carro);
     return (
       <div>
-        <Nav carro={this.state.carro} />
+        <Nav carro={this.state.carro} esCarroVisible={esCarroVisible} mostrarCarro={this.mostrarCarro}/>
         <Layout>
           <Title />
           <Productos 
