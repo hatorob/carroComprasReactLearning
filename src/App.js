@@ -40,7 +40,7 @@ class App extends Component {
     console.log(this.state.carro);
     return (
       <div>
-        <Nav />
+        <Nav carro={this.state.carro} />
         <Layout>
           <Title />
           <Productos 
